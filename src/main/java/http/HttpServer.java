@@ -26,7 +26,7 @@ public class HttpServer {
 							// server端发送的是httpResponse，所以要使用HttpResponseEncoder进行编码
 							ch.pipeline().addLast(new HttpResponseEncoder());
 							ch.pipeline().addLast(new HttpRequestDecoder());
-							ch.pipeline().addLast();
+							ch.pipeline().addLast(new HttpServerInboundHandler());
 						}
 					}).option(ChannelOption.SO_BACKLOG, 128).childOption(ChannelOption.SO_KEEPALIVE, true);
 			
