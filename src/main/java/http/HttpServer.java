@@ -39,4 +39,9 @@ public class HttpServer {
 			boosGroup.shutdownGracefully();
 		}
 	}
+	
+	public static void main(String args[]) throws Exception{
+		HttpServer server = new HttpServer();
+		server.start(8080);
+	}
 }
