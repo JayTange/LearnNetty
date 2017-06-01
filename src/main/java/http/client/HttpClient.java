@@ -33,6 +33,7 @@ public class HttpClient {
 				protected void initChannel(SocketChannel ch) throws Exception {
 					ch.pipeline().addLast(new HttpResponseDecoder());
 					ch.pipeline().addLast(new HttpRequestEncoder());
+					ch.pipeline().addLast(new HttpClientInboundHandler());
 				}
 				
 			});

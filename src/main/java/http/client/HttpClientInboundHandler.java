@@ -18,7 +18,7 @@ public class HttpClientInboundHandler extends ChannelInboundHandlerAdapter{
 		if(msg instanceof HttpContent){
 			HttpContent content = (HttpContent) msg;
 			ByteBuf buf = content.content();
-			System.out.println("conttent: "+buf.toString());
+			System.out.println("content: "+buf.toString());
 			buf.release();
 		}
 	}

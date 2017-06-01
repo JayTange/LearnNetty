@@ -13,6 +13,7 @@ import io.netty.handler.codec.http.HttpHeaders.Values;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.handler.codec.http.HttpVersion;
+import io.netty.util.CharsetUtil;
 
 public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter{
 
@@ -28,7 +29,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter{
 		if(msg instanceof HttpContent){
 			HttpContent content = (HttpContent) msg;
 			ByteBuf buf = content.content();
-			System.out.println(buf.toString());
+			System.out.println(buf.toString(CharsetUtil.UTF_8));
 			buf.release();
 			
 			String res = "I AM OK";
