@@ -43,7 +43,7 @@ public class JdbcCurdByStatement {
 			//通过conn对象获取负责执行SQL命令的Statement对象
 			st = conn.createStatement();
 			//要执行的sql
-			String sql = "insert into user(ID,name,pwd) values(6,'小花','456')";
+			String sql = "insert into user(ID,name,pwd) values(6,'test','456')";
 			//执行插入操作
 			int num = st.executeUpdate(sql);
 			if(num>0){

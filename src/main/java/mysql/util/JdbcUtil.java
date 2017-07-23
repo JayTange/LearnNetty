@@ -1,5 +1,7 @@
 package mysql.util;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,7 +24,7 @@ public class JdbcUtil {
 	static {
 		try {
 			// 读取properties中的数据库配置信息
-			InputStream is = JdbcUtil.class.getClassLoader().getResourceAsStream("db.Properties");
+			InputStream is =new BufferedInputStream(new FileInputStream("./src/main/test/db.properties"));
 			Properties prop = new Properties();
 			prop.load(is);
 
